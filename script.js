@@ -12,22 +12,22 @@ var specialCharacters = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", 
 function userInput() {
   userChoice = [];
 
-  lengthChoice = parseInt(prompt("Choose a number between 8 and 128."));
+  lengthChoice = parseInt(prompt("How many characters long would you like your password to be? (min. 8 - max. 128)."));
 
   if (isNaN(lengthChoice) || lengthChoice < 8 || lengthChoice > 128) {
-    alert("Password length must be in bewteen 8 and 128 characters.");
+    alert("Password length must be bewteen 8 and 128 characters.");
   return false;
   }
-  if (confirm("Would you like to allow UPPER case characters?")) {
+  if (confirm("Would you like to allow uppercase characters? (i.e. A,B,C,D...")) {
     userChoice = userChoice.concat(upperCaseCharacters);
   }
-  if (confirm("Would you like to allow lower case characters?")) {
+  if (confirm("Would you like to allow lowercase characters? (i.e. a,b,c,d...")) {
     userChoice = userChoice.concat(lowerCaseCharacters);
   }
-  if (confirm("Would you like to allow numeric characters?")) {
+  if (confirm("Would you like to allow numeric characters? (i.e. 1,2,3,4...")) {
     userChoice = userChoice.concat(numericCharacters);
   }
-  if (confirm("Would you like to allow special characters? (@,#,$,%...)")) {
+  if (confirm("Would you like to allow special characters? (i.e. @,#,$,%...)")) {
     userChoice = userChoice.concat(specialCharacters);
   }
 
